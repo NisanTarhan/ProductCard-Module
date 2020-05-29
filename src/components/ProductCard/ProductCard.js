@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
-
+import { StyledProductCard } from './styles';
 
 const ProductCard = () => {
     return (
-        <div>
+        <StyledProductCard>
             ProductCard
-        </div>
+        </StyledProductCard>
     )
 }
 
