@@ -1,4 +1,6 @@
 import styled from 'styled-components';
+import emptyHeartLogo from '../../images/empty-heart-logo.png';
+import heartLogo from '../../images/heart-logo.png';
 
 export const StyledProductCard = styled.div`
     display: flex;
@@ -55,10 +57,26 @@ export const StyledPriceTag = styled.p`
 `
 
 export const StyledCargoDescription = styled.p`
-    background: white;
     font-size: 12px;
     font-weight: 600;
-    padding-left: 10px;
-    padding-bottom: 10px;
-    color: #5ba71b;
+    margin-left:  ${props => props.cargoType === "Ücretli Kargo" ? "0" : "2.2rem"};
+    padding-top: 5px;
+    padding-bottom: 5px;
+    color: #FFFF;
+`
+
+export const StyledHeartLogo = styled.img`
+    height: 40px; 
+    width: 40px;
+    position: absolute;
+    left: 15.7rem;
+    top: 1rem;
+`
+
+export const StyledCargoLogo = styled.img`
+    display: ${props => props.cargoType === "Ücretli Kargo" ? "none" : "block"};
+    position: absolute;
+    height: 30px; 
+    width: 30px;
+    bottom: 1.3rem;
 `

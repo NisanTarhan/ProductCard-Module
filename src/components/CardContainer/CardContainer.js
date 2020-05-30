@@ -1,21 +1,18 @@
 import React from 'react';
 import ProductCard from '../ProductCard';
-import { StyledCardContainer } from './styles';
+import { StyledCardContainer, StyledTitle } from './styles';
 import mockData from '../../mockData';
 
 const CardContainer = () => {
     return (
-        <StyledCardContainer>
-            <ProductCard />
-            <ProductCard />
-            <ProductCard />
-            <ProductCard />
-            <ProductCard />
-            <ProductCard />
-            <ProductCard />
-            <ProductCard />
-            <ProductCard />
-        </StyledCardContainer>
+        <>
+            <StyledTitle>İlginizi Çekebilecek Ürünler</StyledTitle>
+            <StyledCardContainer>
+                {
+                    mockData.map(product => <ProductCard key={product.id} data={product} />)
+                }
+            </StyledCardContainer>
+        </>
     )
 }
 

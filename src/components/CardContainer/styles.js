@@ -11,3 +11,10 @@ export const StyledCardContainer = styled.div`
     border-radius: 0.5rem;
     background: #27496d;
 `;
+
+export const StyledTitle = styled.div`
+    font-size: 1.7rem;
+    font-weight: bold;
+    padding-top: 20px;
+    padding-left: 30px;
+`
