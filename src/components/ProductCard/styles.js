@@ -1,8 +1,6 @@
 import styled from 'styled-components';
-import emptyHeartLogo from '../../images/empty-heart-logo.png';
-import heartLogo from '../../images/heart-logo.png';
 
-export const StyledProductCard = styled.div`
+export const StyledProductCard = styled.a`
     display: flex;
     flex-direction: column;
     width: 288px;
@@ -10,6 +8,7 @@ export const StyledProductCard = styled.div`
     margin: auto;
     padding: 10px;
     background: orange;
+    text-decoration: none;
     /* box-shadow: 6px 9px 34px 0px rgba(0,0,0,0.15); */
     cursor: pointer;
     color: black;
@@ -25,7 +24,7 @@ export const StyledImage = styled.img`
     margin-bottom: 0.75rem;
 `
 
-export const StyledText = styled.p`
+export const StyledProductDescription = styled.p`
     background: white;
     font-size: 13px;
     font-weight: 600;
@@ -56,7 +55,7 @@ export const StyledPriceTag = styled.p`
     line-height: 1.6rem;
 `
 
-export const StyledCargoDescription = styled.p`
+export const StyledCargoType = styled.p`
     font-size: 12px;
     font-weight: 600;
     margin-left:  ${props => props.cargoType === "Ücretli Kargo" ? "0" : "2.2rem"};
@@ -66,6 +65,7 @@ export const StyledCargoDescription = styled.p`
 `
 
 export const StyledHeartLogo = styled.img`
+    background-image: url(emptyHeartLogo);
     height: 40px; 
     width: 40px;
     position: absolute;
