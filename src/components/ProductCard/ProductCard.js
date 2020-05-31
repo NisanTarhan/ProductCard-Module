@@ -2,11 +2,27 @@ import React, { useState } from 'react';
 import emptyHeartLogo from '../../images/empty-heart-logo.png';
 import heartLogo from '../../images/heart-logo.png';
 import cargoLogo from '../../images/cargo-icon.png';
-import { StyledProductCard, StyledImage, StyledProductDescription, StyledPriceTag, StyledCargoType, StyledHeartLogo, StyledCargoLogo } from './styles';
+import {
+    StyledProductCard,
+    StyledImage,
+    StyledProductDescription,
+    StyledPriceTag,
+    StyledCargoType,
+    StyledHeartLogo,
+    StyledCargoLogo
+} from './styles';
 
 const ProductCard = ({ data }) => {
     const [like, setLike] = useState(false);
     const { id, productName, price, cargo, link } = data;
+
+    function addDots(productTitle) {
+        if (productTitle.length > 86) {
+            let productTitleWithDots = productTitle.slice(0, 86) + "...";
+            return productTitleWithDots;
+        }
+        return productTitle
+    }
 
     const likeLogo = like ? heartLogo : emptyHeartLogo
 
@@ -17,11 +33,9 @@ const ProductCard = ({ data }) => {
                 setLike(!like);
             }} />
             <StyledImage src={"https://dummyimage.com/159x241"} alt="product" />
-            <StyledProductDescription>{productName}</StyledProductDescription>
+            <StyledProductDescription>{addDots(productName)}</StyledProductDescription>
             <StyledPriceTag>{price}TL</StyledPriceTag>
-            {/* <div style={{ display: "none" }}> */}
             <StyledCargoLogo cargoType={cargo} src={cargoLogo} alt="Logo" />
-            {/* </div> */}
             <StyledCargoType cargoType={cargo}>{cargo}</StyledCargoType>
         </StyledProductCard>
     )

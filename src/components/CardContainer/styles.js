@@ -9,7 +9,7 @@ export const StyledCardContainer = styled.div`
     padding: 20px;
     margin: 2rem auto;
     border-radius: 0.5rem;
-    background: #27496d;
+    background: #F4AD26;
 `;
 
 export const StyledTitle = styled.div`

@@ -7,9 +7,9 @@ export const StyledProductCard = styled.a`
     height: 400px;
     margin: auto;
     padding: 10px;
-    background: orange;
+    background: #2669B2;
     text-decoration: none;
-    /* box-shadow: 6px 9px 34px 0px rgba(0,0,0,0.15); */
+    box-shadow: 6px 9px 34px 0px rgba(0,0,0,0.15);
     cursor: pointer;
     color: black;
     border-radius: 5px;
@@ -28,17 +28,18 @@ export const StyledProductDescription = styled.p`
     background: white;
     font-size: 13px;
     font-weight: 600;
-    padding-left: 10px;
+    /* padding-left: 10px; */
     padding-bottom: 10px;
     margin-bottom: 10px;
-    line-height: 16px;
-    height: 40px;
+    line-height: 1rem;
+    height: 2.4rem;
     /* width: 200px; */
     /* box-orient: vertical;   */
-    line-clamp: 2;
+    /* line-clamp: 2; */
     overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: normal;
+    /* text-overflow: ellipsis; */
+    /* white-space: normal; */
+    /* box-orient: vertical; */
     /* color: rgb(51, 51, 58); */
 `
 
@@ -74,6 +75,8 @@ export const StyledHeartLogo = styled.img`
 `
 
 export const StyledCargoLogo = styled.img`
+    background-color: #7FBB42;
+    border-radius: 3px;
     display: ${props => props.cargoType === "Ücretli Kargo" ? "none" : "block"};
     position: absolute;
     height: 30px; 
