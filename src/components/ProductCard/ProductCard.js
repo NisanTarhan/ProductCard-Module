@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import emptyHeartLogo from '../../images/empty-heart-logo.png';
 import heartLogo from '../../images/heart-logo.png';
 import cargoLogo from '../../images/cargo-icon.png';
+import PropTypes from 'prop-types';
 import {
     StyledProductCard,
     StyledImage,
@@ -43,4 +44,18 @@ const ProductCard = ({ data }) => {
 
 export default ProductCard;
 
-// "https://dummyimage.com/159x241"
+ProductCard.propTypes = {
+    productName: PropTypes.string,
+    price: PropTypes.number,
+    cargo: PropTypes.string,
+    link: PropTypes.string,
+    imageUrl: PropTypes.string
+}
+
+ProductCard.defaultProps = {
+    productName: "Unknown",
+    price: 0,
+    cargo: "Ücretsiz Kargo",
+    link: "https://www.gittigidiyor.com",
+    imageUrl: "https://dummyimage.com/159x241"
+}
