@@ -4,7 +4,7 @@ export const StyledProductCard = styled.a`
     display: flex;
     flex-direction: column;
     width: 288px;
-    height: 400px;
+    height: 440px;
     margin: auto;
     padding: 10px;
     background: #2669B2;
@@ -19,7 +19,8 @@ export const StyledProductCard = styled.a`
 
 export const StyledImage = styled.img`
     width: 100%;
-    height: 24.4rem;
+    height: auto;
+    max-height: 280px;
     border-radius: 3px;
     margin-bottom: 0.75rem;
 `
@@ -36,7 +37,7 @@ export const StyledProductDescription = styled.p`
     /* width: 200px; */
     /* box-orient: vertical;   */
     /* line-clamp: 2; */
-    overflow: hidden;
+    /* overflow: hidden; */
     /* text-overflow: ellipsis; */
     /* white-space: normal; */
     /* box-orient: vertical; */
