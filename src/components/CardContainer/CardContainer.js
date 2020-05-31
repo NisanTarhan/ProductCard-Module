@@ -1,16 +1,22 @@
-import React from 'react';
-import fire from "../../config";
+import React, { useEffect, useState } from 'react';
+import { database } from "../../config";
 import ProductCard from '../ProductCard';
 import { StyledCardContainer, StyledTitle } from './styles';
-import mockData from '../../mockData';
 
 const CardContainer = () => {
+    const [data, setData] = useState();
+    useEffect(() => {
+        database.ref("products").on('value', (snapshot) => {
+            setData(snapshot.val())
+        });
+    }, [])
+
     return (
         <>
             <StyledTitle>İlginizi Çekebilecek Ürünler</StyledTitle>
             <StyledCardContainer>
                 {
-                    mockData.map(product => <ProductCard key={product.id} data={product} />)
+                    data ? data.map(product => <ProductCard key={product.id} data={product} />) : "LOADING..."
                 }
             </StyledCardContainer>
         </>

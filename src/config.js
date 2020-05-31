@@ -11,5 +11,8 @@ var firebaseConfig = {
     measurementId: "G-PKYXJDTX8Z"
 };
 
-var fire = firebase.initializeApp(firebaseConfig);
-export default fire;
+firebase.initializeApp(firebaseConfig);
+
+export default firebase;
+
+export const database = firebase.database();

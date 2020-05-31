@@ -14,7 +14,7 @@ import {
 
 const ProductCard = ({ data }) => {
     const [like, setLike] = useState(false);
-    const { id, productName, price, cargo, link } = data;
+    const { productName, price, cargo, link, imageUrl } = data;
 
     function addDots(productTitle) {
         if (productTitle.length > 86) {
@@ -32,7 +32,7 @@ const ProductCard = ({ data }) => {
                 e.preventDefault();
                 setLike(!like);
             }} />
-            <StyledImage src={"https://dummyimage.com/159x241"} alt="product" />
+            <StyledImage src={imageUrl} alt="product" />
             <StyledProductDescription>{addDots(productName)}</StyledProductDescription>
             <StyledPriceTag>{price}TL</StyledPriceTag>
             <StyledCargoLogo cargoType={cargo} src={cargoLogo} alt="Logo" />
@@ -42,3 +42,5 @@ const ProductCard = ({ data }) => {
 }
 
 export default ProductCard;
+
+// "https://dummyimage.com/159x241"
