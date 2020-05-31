@@ -1,4 +1,5 @@
 import React from 'react';
+import fire from "../../config";
 import ProductCard from '../ProductCard';
 import { StyledCardContainer, StyledTitle } from './styles';
 import mockData from '../../mockData';
