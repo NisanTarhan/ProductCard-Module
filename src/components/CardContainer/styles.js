@@ -1,5 +1,9 @@
 import styled from "styled-components";
 
+export const StyledContainer = styled.div`
+    background: "#EEEEEE"
+`
+
 export const StyledCardContainer = styled.div`
     display: grid;
     grid-template-columns: repeat(auto-fill,minmax(18rem, 1fr));
@@ -9,7 +13,6 @@ export const StyledCardContainer = styled.div`
     padding: 20px;
     margin: 2rem auto;
     border-radius: 0.5rem;
-    background: #F4AD26;
 `;
 
 export const StyledTitle = styled.div`
