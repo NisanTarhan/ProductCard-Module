@@ -1,8 +1,14 @@
+## ProductCard Module
+
+This is the product card module that is designed with style-component. React Unit Testing has written with Jest and created a responsive layout with CSS Grid.
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
 
 In the project directory, you can run:
+
+### `yarn`
 
 ### `yarn start`
 
