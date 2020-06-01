@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
-import emptyHeartLogo from '../../images/empty-heart-logo.png';
-import heartLogo from '../../images/heart-logo.png';
-import cargoLogo from '../../images/cargo-icon.png';
+import emptyHeartLogo from './assets/empty-heart-logo.png';
+import heartLogo from './assets/heart-logo.png';
+import cargoLogo from './assets/cargo-icon.png';
 import PropTypes from 'prop-types';
 import {
     StyledProductCard,
@@ -12,32 +12,27 @@ import {
     StyledHeartLogo,
     StyledCargoLogo
 } from './styles';
+import addDots from './utils'
 
 const ProductCard = ({ data }) => {
     const [like, setLike] = useState(false);
     const { productName, price, cargo, link, imageUrl } = data;
 
-    function addDots(productTitle) {
-        if (productTitle.length > 86) {
-            let productTitleWithDots = productTitle.slice(0, 86) + "...";
-            return productTitleWithDots;
-        }
-        return productTitle
+    const toggleLikeClick = e => {
+        e.preventDefault();
+        setLike(!like);
     }
 
     const likeLogo = like ? heartLogo : emptyHeartLogo
 
     return (
         <StyledProductCard href={link} target="_blank" rel="noopener noreferrer">
-            <StyledHeartLogo src={likeLogo} alt="Logo" onClick={(e) => {
-                e.preventDefault();
-                setLike(!like);
-            }} />
-            <StyledImage src={imageUrl} alt="product" />
-            <StyledProductDescription>{addDots(productName)}</StyledProductDescription>
-            <StyledPriceTag>{price}TL</StyledPriceTag>
+            <StyledHeartLogo src={likeLogo} alt="Logo" onClick={toggleLikeClick} />
+            <StyledImage data-testid="product-image" src={imageUrl} alt="product" />
+            <StyledProductDescription data-testid="product-description">{addDots(productName)}</StyledProductDescription>
+            <StyledPriceTag data-testid="price">{price?.toFixed(2)} TL</StyledPriceTag>
             <StyledCargoLogo cargoType={cargo} src={cargoLogo} alt="Logo" />
-            <StyledCargoType cargoType={cargo}>{cargo}</StyledCargoType>
+            <StyledCargoType data-testid="cargo-type" cargoType={cargo}>{cargo}</StyledCargoType>
         </StyledProductCard>
     )
 }
