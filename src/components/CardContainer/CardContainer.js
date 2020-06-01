@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import { database } from "../../config";
 import ProductCard from '../ProductCard';
-import { StyledCardContainer, StyledTitle } from './styles';
+import Spinner from '../Spinner';
+import { StyledCardContainer, StyledTitle, StyledContainer } from './styles';
 
 const CardContainer = () => {
     const [data, setData] = useState();
@@ -12,14 +13,14 @@ const CardContainer = () => {
     }, [])
 
     return (
-        <>
+        <StyledContainer>
             <StyledTitle>İlginizi Çekebilecek Ürünler</StyledTitle>
             <StyledCardContainer>
                 {
-                    data ? data.map(product => <ProductCard key={product.id} data={product} />) : "LOADING..."
+                    data ? data.map(product => <ProductCard key={product.id} data={product} />) : <Spinner />
                 }
             </StyledCardContainer>
-        </>
+        </StyledContainer>
     )
 }
 
